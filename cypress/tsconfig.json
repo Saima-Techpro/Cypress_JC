@@ -1,0 +1,15 @@
+{
+    "compilerOptions" : { 
+        "allowJs" : true,
+    "baseUrl" : "../node_modules" , 
+    "noEmit" : true,
+    "types" : [ "cypress"
+    ]
+    },
+    "include" : [
+    "**/*.*"
+    ]
+}
+
+// This file helps for smart coding  => autocomplete
+    
