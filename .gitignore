@@ -1,3 +1,19 @@
+# === Node ===
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Cypress ===
 cypress/videos/
 cypress/screenshots/
+
+
+# === VS Code ===
+.vscode/
+# === OS-specific ===
+.DS_Store  # macOS
+Thumbs.db  # Windows
+# === Environment Files ===
+.env
+.env.local
