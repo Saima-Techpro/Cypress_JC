@@ -16,5 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-xpath';
+import 'cypress-iframe';
+require('@faker-js/faker') 
 
 
