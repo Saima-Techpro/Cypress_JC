@@ -1,0 +1,25 @@
+{
+    "firstName": "Ali",
+    "lastName": "Can",
+    "dateOfBirth": "1980-12-12",
+    "street": "8 Chevry Close",
+    "postCode": "50500",
+    "city": "Milton Keyenes",
+    "state": "Berkshire",
+    "country": "Germany",
+    "phone": "05558887799",
+    "email": "faker1234@faker.com",
+    "password": "123lmXY/",
+    "passwordWith5Chars": "123ab",
+    "passwordMinLengthErrorMessage": "Password must be minimal 6 characters long.",
+    "emailAlreadyExistErrorMessage": "A customer with this email address already exists.",
+    "firstNameRequiredMessage": "First name is required",
+    "lastNameRequiredMessage": "fields.last-name.required",
+    "dateOfBirthRequiredMessage": "Date of Birth is required",
+    "streetRequiredMessage": "Street is required",
+    "postalCodeRequiredMessage": "Postcode is required",
+    "cityRequiredMessage": "City is required",
+    "stateRequiredMessage": "State is required",
+    "phoneRequiredMessage": "Phone is required."
+
+}
