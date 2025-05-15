@@ -17,6 +17,8 @@
 import './commands'
 import 'cypress-xpath';
 import 'cypress-iframe';
+import 'cypress-mochawesome-reporter/register';
+
 require('@faker-js/faker') 
 
 

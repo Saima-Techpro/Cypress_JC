@@ -7,10 +7,8 @@ describe('Tool Shop: Test Suite', () => {
         let email = faker.internet.email();
         let password = faker.internet.password() + '2!' ;// this password() doesn't always generate a password with a special character so we concatenate it with !
 
-   
 
          // Use writeFile() method to store the generated email and password as a file 
-
         cy.writeFile('files/email.txt', email)
         cy.writeFile('files/password.txt', password)
 

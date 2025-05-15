@@ -7,7 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "registerTestWithFaker": "npx cypress run --headed --browser chrome --spec cypress/e2e/4-POM/RegisterTestWithFaker.cy.js"
   },
   "dependencies": {
     "cypress": "^14.3.3"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@faker-js/faker": "^9.7.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
     "xpath_cypress": "^2.0.0"
   }

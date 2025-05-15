@@ -1,10 +1,12 @@
-const { login } = require("../support/pages/login_page");
-const { register } = require("../support/pages/register_page");
+const { faker } = require("@faker-js/faker");
+const { login } = require("../../support/pages/login_page");
+const { register } = require("../../support/pages/register_page");
 
 describe('Register Test Suite', () => {
     // Class level variables to store the data coming from fixture files 
     let registerData
     let loginData
+    let fakeMail
 
 
     before(() => {
@@ -16,6 +18,8 @@ describe('Register Test Suite', () => {
         cy.fixture('login_data').then((data)=>{
             loginData = data
         })
+
+        fakeMail = faker.internet.email()
 
 
     })
@@ -36,7 +40,7 @@ describe('Register Test Suite', () => {
         register.writeState(registerData.state)
         register.writeCountry(registerData.country)
         register.writePhone(registerData.phone)
-        register.writeEmail(registerData.email)
+        register.writeEmail(fakeMail)
         register.writePassword(registerData.password)
         register.clickRegister()
         login.verifyPageTitle(loginData.pageTitle) // Test passed 
@@ -57,7 +61,7 @@ describe('Register Test Suite', () => {
         register.writeState(registerData.state)
         register.writeCountry(registerData.country)
         register.writePhone(registerData.phone)
-        register.writeEmail('example2@example.com')
+        register.writeEmail(faker.internet.email())
         register.writePassword(registerData.passwordWith5Chars)
         register.clickRegister()
         register.verifypasswordMinLengthErrorMessage(registerData.passwordMinLengthErrorMessage) // Test passed => error message is visible 
@@ -66,7 +70,7 @@ describe('Register Test Suite', () => {
 
 
 
-     it.only('TC-03: Verify that registration cannot be completed using an already registered email address.', () => {
+     it('TC-03: Verify that registration cannot be completed using an already registered email address.', () => {
 
         cy.visit('https://practicesoftwaretesting.com/auth/register');
 
@@ -79,14 +83,14 @@ describe('Register Test Suite', () => {
         register.writeState(registerData.state)
         register.writeCountry(registerData.country)
         register.writePhone(registerData.phone)
-        register.writeEmail('example2@example.com')
+        register.writeEmail(fakeMail)
         register.writePassword(registerData.password)
         register.clickRegister()
         register.verifyEmailAlreadyExistErrorMessage(registerData.emailAlreadyExistErrorMessage) // Test passed => error message is visible 
         
     });
 
-      it.only('TC-04: Verify that warning messages appear when required fields are left empty.', () => {
+      it('TC-04: Verify that warning messages appear when required fields are left empty.', () => {
 
         cy.visit('https://practicesoftwaretesting.com/auth/register');
 
