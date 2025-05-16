@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "registerTestWithFaker": "npx cypress run --headed --browser chrome --spec cypress/e2e/4-POM/RegisterTestWithFaker.cy.js"
+    "registerTestWithFaker": "npx cypress run --headed --browser chrome --spec cypress/e2e/4-POM/RegisterTestWithFaker.cy.js",
+    "crossBrowserTesting":"npx cypress run --headed --browser chrome --spec 'cypress/e2e/4-POM/LoginTest.cy.js' & npx cypress run --headed --browser edge --spec 'cypress/e2e/4-POM/LoginTest.cy.js'"
   },
   "dependencies": {
     "cypress": "^14.3.3"

@@ -7,7 +7,7 @@ describe('Register Test Suite', () => {
     let registerData
     let loginData
     let fakeMail
-    let fakeUser
+    let fakeUserData
 
 
     before(() => {
@@ -55,17 +55,17 @@ describe('Register Test Suite', () => {
 
 
     it('TC-01: Verify that registration can be completed with valid data.', () => {
-        register.writeFirstName(fakeUser.firstName)
-        register.writeLastName(fakeUser.lastName)
-        register.writeDateOfBirth(fakeUser.dateOfBirth)
-        register.writeStreet(fakeUser.street)
-        register.writeCity(fakeUser.city)
-        register.writepostalCode(fakeUser.postCode)
-        register.writeState(fakeUser.state)
-        register.writeCountry(fakeUser.country)
-        register.writePhone(fakeUser.phone)
-        register.writeEmail(fakeUser.email)
-        register.writePassword(fakeUser.password)
+        register.writeFirstName(fakeUserData.firstName)
+        register.writeLastName(fakeUserData.lastName)
+        register.writeDateOfBirth(fakeUserData.dateOfBirth)
+        register.writeStreet(fakeUserData.street)
+        register.writeCity(fakeUserData.city)
+        register.writepostalCode(fakeUserData.postCode)
+        register.writeState(fakeUserData.state)
+        register.writeCountry(fakeUserData.country)
+        register.writePhone(fakeUserData.phone)
+        register.writeEmail(fakeUserData.email)
+        register.writePassword(fakeUserData.password)
         register.clickRegister()
         login.verifyPageTitle(loginData.pageTitle) // Test passed 
         
@@ -74,16 +74,16 @@ describe('Register Test Suite', () => {
 
      it('TC-02: Verify that a password with fewer than 6 characters cannot be used.', () => {
 
-        register.writeFirstName(fakeUser.firstName)
-        register.writeLastName(fakeUser.lastName)
-        register.writeDateOfBirth(fakeUser.dateOfBirth)
-        register.writeStreet(fakeUser.street)
-        register.writeCity(fakeUser.city)
-        register.writepostalCode(fakeUser.postCode)
-        register.writeState(fakeUser.state)
-        register.writeCountry(fakeUser.country)
-        register.writePhone(fakeUser.phone)
-        register.writeEmail(fakeUser.email)
+        register.writeFirstName(fakeUserData.firstName)
+        register.writeLastName(fakeUserData.lastName)
+        register.writeDateOfBirth(fakeUserData.dateOfBirth)
+        register.writeStreet(fakeUserData.street)
+        register.writeCity(fakeUserData.city)
+        register.writepostalCode(fakeUserData.postCode)
+        register.writeState(fakeUserData.state)
+        register.writeCountry(fakeUserData.country)
+        register.writePhone(fakeUserData.phone)
+        register.writeEmail(fakeUserData.email)
         register.writePassword(registerData.passwordWith5Chars)
         register.clickRegister()
         register.verifypasswordMinLengthErrorMessage(registerData.passwordMinLengthErrorMessage) // Test passed => error message is visible 
@@ -95,17 +95,17 @@ describe('Register Test Suite', () => {
      it('TC-03: Verify that registration cannot be completed using an already registered email address.', () => {
 
 
-        register.writeFirstName(fakeUser.firstName)
-        register.writeLastName(fakeUser.lastName)
-        register.writeDateOfBirth(fakeUser.dateOfBirth)
-        register.writeStreet(fakeUser.street)
-        register.writeCity(fakeUser.city)
-        register.writepostalCode(fakeUser.postCode)
-        register.writeState(fakeUser.state)
-        register.writeCountry(fakeUser.country)
-        register.writePhone(fakeUser.phone)
-        register.writeEmail(fakeUser.email)
-        register.writePassword(registerData.password)
+        register.writeFirstName(fakeUserData.firstName)
+        register.writeLastName(fakeUserData.lastName)
+        register.writeDateOfBirth(fakeUserData.dateOfBirth)
+        register.writeStreet(fakeUserData.street)
+        register.writeCity(fakeUserData.city)
+        register.writepostalCode(fakeUserData.postCode)
+        register.writeState(fakeUserData.state)
+        register.writeCountry(fakeUserData.country)
+        register.writePhone(fakeUserData.phone)
+        register.writeEmail(fakeUserData.email)
+        register.writePassword(fakeUserData.password)
         register.clickRegister()
         register.verifyEmailAlreadyExistErrorMessage(registerData.emailAlreadyExistErrorMessage) // Test passed => error message is visible 
         
@@ -114,8 +114,8 @@ describe('Register Test Suite', () => {
       it('TC-04: Verify that warning messages appear when required fields are left empty.', () => {
 
 
-        register.writeEmail(fakeUser.email) // sending already registered email
-        register.writePassword(fakeUser.password) // sending already registered password
+        register.writeEmail(fakeUserData.email) // sending already registered email
+        register.writePassword(fakeUserData.password) // sending already registered password
         register.clickRegister()
     
         // Verify all warning messages 
@@ -125,9 +125,9 @@ describe('Register Test Suite', () => {
         register.verifyDateOfBirthRequiredMessage(registerData.dateOfBirthRequiredMessage)
         register.verifyStreetRequiredMessage(registerData.streetRequiredMessage) 
         register.verifyPostalCodeRequiredMessage(registerData.postalCodeRequiredMessage) 
-         register.verifyCityRequiredMessage(registerData.cityRequiredMessage) 
-         register.verifyStateRequiredMessage(registerData.stateRequiredMessage) 
-         register.verifyPhoneRequiredMessage(registerData.phoneRequiredMessage)
+        register.verifyCityRequiredMessage(registerData.cityRequiredMessage) 
+        register.verifyStateRequiredMessage(registerData.stateRequiredMessage) 
+        register.verifyPhoneRequiredMessage(registerData.phoneRequiredMessage)
         
         
     });

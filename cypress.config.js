@@ -1,19 +1,22 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  watchForFileChanges: false,
+  watchForFileChanges: false, // if false, it disables the autorun of the test cases 
   defaultCommandTimeout: 5000,
 
   //  Report Configuration
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions:{
-    overwrite: true, // if true, it deletes the previous HTML files and creates a new one
+    overwrite: false, // if true, it deletes the previous HTML files and creates a new one
     charts: true, // adds a chart to the report showing pass and fail test status 
     reportPageTitle: 'Tool Shop - Registration Test Suite',  // this is used to change the report title
-    reportFilename: "[name]_[status]-[datetime]-report",
-    timestamp: "shortDate",
-    embeddedscreenshots: true
-
+    reportFilename: "[name]_[status]-[datetime]-report",  // setting of the name of the report
+    timestamp: "shortDate", // date in numbers; longDate shows date (mainly month) in words
+    embeddedscreenshots: true, // attaches the screenshot to the HTML report 
+    inlineAssets:true, // embeds the contents of the assets folder directly to the HTML reports 
+    saveAllAttempts: false, // Only adds the screenshot of the last try of thererun of failed test cases 
+    ignoreVideos: false, // If true, ignores the videos and doesn't embed in the report
+    videoOnFailOnly: false // If true, attaches the video of the failed test cases only
 
   },
 

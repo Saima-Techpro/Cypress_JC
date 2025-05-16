@@ -1,3 +1,9 @@
 {
-    "pageTitle": "Login"
+    "pageTitle": "Login",
+    "validAdminEmail": "admin@practicesoftwaretesting.com",
+    "validAdminPassword": "welcome01",
+    "invalidAdminEmail": "adminee@practicesoftwaretesting.com",
+    "invalidAdminPassword": "welcome05",
+    "invalidEmailPasswordMessage": "Invalid email or password"
+    
 }
